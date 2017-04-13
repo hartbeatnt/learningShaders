@@ -32,7 +32,18 @@
     mat3, mat4, sampler2D and samplerCube.
   - defined at the top after defining default floating
     point precision
-  
+
+- GLSL can take advantage of hardware accelrated angle,
+  trigonometric, and exponential functions
+    - sin(), cos(), tan(), asin(), acos(), atan(), exp(),
+      log(), sqrt(), abs(), sign(), floor(), ciel(),
+      fract(), mod(), min(), max(), and clamp()
+
+- gl_FragCoord: default input that holds the screen
+  coordinates of the fragment
+    - this is not a uniform variable, as it will vary
+      from thread to thread. 
+    - Thus it is a 'varying' type variable
 
 
 */
