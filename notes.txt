@@ -1,0 +1,7 @@
+SHADERSSSSSSSSS
+
+- Shaders are BLIND and MEMORYLESS
+  - each thread has no knowledge of what other threads are doing
+  - data flow is strictly unidirectional
+  - threads cannot hold state after completing a task
+
