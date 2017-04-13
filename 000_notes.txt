@@ -1,7 +1,44 @@
-SHADERSSSSSSSSS
-
+///////////////  SHADERS
+/*
 - Shaders are BLIND and MEMORYLESS
   - each thread has no knowledge of what other threads are doing
   - data flow is strictly unidirectional
   - threads cannot hold state after completing a task
 
+- Like in C, shaders have a single main() function
+  - in fragment shaders, main will always return a vec4
+    called gl_fragColor that will set the color of the 
+    fragment
+  - the four values in a color vector represent RBGA
+
+- Like in C, shaders can use pre-processor macros
+  - can be used to define global variables
+  - can do basic conditional branching
+
+- when defining floats in GLSL, can set precision
+  level
+  - precision lowp float: low quality, high speed
+  - precision mediump float: mid quality, mid speed
+  - precision highp float: high quality, low speed
+
+- glsl does not guarantee casting. This means all floats
+  must be explicitly defined WITH DECIMAL PLACES
+  - float badExample = 4      // ERROR
+  - float goodExample = 4.0   // no error
+
+- uniforms: read-only variables that are passed into
+  each thread
+  - supported types: float, vec2, vec3, vec4, mat2, 
+    mat3, mat4, sampler2D and samplerCube.
+  - defined at the top after defining default floating
+    point precision
+  
+
+
+*/
+
+////////////////////////////////////
+void main()
+{
+  gl_FragColor = vec4(1.0, 0.4, 1.0, 1.0);
+}
