@@ -5,14 +5,12 @@ precision mediump float;
 *  shaderToy automatically defines iResolution
 *  For other implementations, uncomment below: 
 */
-
 // uniform vec2 iResolution;
 
-uniform vec2 u_mouse;
 
 void main() {
-	vec2 st = gl_FragCoord.xy/iResolution.xy;
-	gl_FragColor = vec4(st.x,st.y,0.0,1.0);
+	vec2 pos = gl_FragCoord.xy/iResolution.xy;
+	gl_FragColor = vec4(pos.x,pos.y,0.0,1.0);
 }
 
 /** 

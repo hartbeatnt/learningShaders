@@ -37,17 +37,52 @@
   trigonometric, and exponential functions
     - sin(), cos(), tan(), asin(), acos(), atan(), exp(),
       log(), sqrt(), abs(), sign(), floor(), ciel(),
-      fract(), mod(), min(), max(), and clamp()
+      fract(), mod(), min(), max(), and clamp(),
+      step(), smoothstep(), smootherstep(), mix(),
 
 - gl_FragCoord: default input that holds the screen
   coordinates of the fragment
     - this is not a uniform variable, as it will vary
       from thread to thread. 
     - Thus it is a 'varying' type variable
+=================
+step(), smoothstep(), and smootherstep() 
+are used for interpolating
 
+====  smoothstep(edge0, x, edge1)
+  /* 
+   smoothstep performs smooth interpolation 
+   between 0 and 1 
+    ----  RULE:
+    ------  edge0 < x < edge1.  
+   Useful in cases where a threshold function 
+   with a smooth transition is desired. 
+   
+   smoothstep is equivalent to:
 
+                  //  genType is short for 'generic type'
+      genType t;  //  Or genDType t for extra precision;
+                  //    the D stands for double; 
+                  //    default is float;
+
+      t = clamp((x - edge0) / (edge1 - edge0), 0.0, 1.0);
+      return t * t * (3.0 - 2.0 * t);
+
+    Results are undefined if edge0 ≥ edge1.
+  */
 */
+================
+vector[0] = vector.r = vector.x = vector.s;
+vector[1] = vector.g = vector.y = vector.t;
+vector[2] = vector.b = vector.z = vector.p;
+vector[3] = vector.a = vector.w = vector.q;
 
+--  .s .t .p and .q are used as vector vales for the
+    spacial coordinates of a surface texture
+=================
+mix() lets you mix two values by percentage
+
+=================
 ////////////////////////////////////
 void main()
 {
