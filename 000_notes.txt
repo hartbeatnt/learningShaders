@@ -80,8 +80,18 @@ vector[3] = vector.a = vector.w = vector.q;
 --  .s .t .p and .q are used as vector vales for the
     spacial coordinates of a surface texture
 =================
-mix() lets you mix two values by percentage
-
+mix() lets you mix two values by a weighted 
+interpolation value
+  --  syntax: mix(x, y, a)
+  --  x & y are values between mixed between
+    --  could be floats or vectors
+    --  x & y must be of the same type
+  --  a is the weighted interpolation value
+    --  if x & y are floats, a must be a float
+    --  if x & y are vectors, a may be float or vector
+  
+  -- return value: ( x * (1 - a) ) + ( y * a )
+  
 =================
 ////////////////////////////////////
 void main()

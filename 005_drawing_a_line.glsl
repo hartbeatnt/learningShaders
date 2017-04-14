@@ -32,8 +32,8 @@ void main() {
   float lineScalar = plot(pos, y, .02);
   // replace bgColor with lineColor if
   // point is within lineWidth of line
-  vec3 color = (1.0-lineScalar) * bgColor 
-                + lineScalar * lineColor;
+
+  vec3 color = mix(bgColor, lineColor, lineScalar);
     
 	gl_FragColor = vec4(color,1.0);
 }
